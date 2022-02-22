@@ -32,13 +32,9 @@ exports.handler = async function(event, context) {
       if (!whitelist.includes(addr)) {
         return { statusCode: 400, body: "Not in whitelist" };
       }
-      else if (amount < 1 || amount > 3) {
+      else if (amount != 1) {
         return { statusCode: 400, body: "Invalid amount" };
       }
-
-      // if (amount < 1 || amount > 3) {
-      //     return { statusCode: 400, body: "Invalid amount" };
-      //   }
 
       const signature = await sign(addr, amount);
     
@@ -52,7 +48,7 @@ exports.handler = async function(event, context) {
       console.log("invocation error:", err); // output to netlify function log
       return {
         statusCode: 500,
-        body: err.message // Could be a custom message or object i.e. JSON.stringify(err)
+        body: err.message
       };
     }
   };
