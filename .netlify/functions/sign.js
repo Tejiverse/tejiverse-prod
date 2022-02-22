@@ -1,15 +1,14 @@
-// import { ethers } from "https://cdn.ethers.io/lib/ethers-5.2.esm.min.js";
+const ethers = require('ethers');
 
-// const signer = new ethers.Wallet(process.env.PRIVATE_KEY);
+const signer = new ethers.Wallet(process.env.PRIVATE_KEY);
 
 const sign = async(addr, amount) => {
-  return `${addr} wants to mint ${amount} + ${process.env.TEST_NUMBER}`
-	// const message = ethers.utils.solidityKeccak256(
-	// 	["address", "address", "uint256"],
-	// 	[process.env.TEJIVERSE, addr, amount]
-	// );
+	const message = ethers.utils.solidityKeccak256(
+		["address", "address", "uint256"],
+		[process.env.TEJIVERSE, addr, amount]
+	);
 
-	// return await signer.signMessage(ethers.utils.arrayify(message));
+	return await signer.signMessage(ethers.utils.arrayify(message));
 }
 
 exports.handler = async function(event, context) {
@@ -20,8 +19,7 @@ exports.handler = async function(event, context) {
       }
 
       try {
-        // addr = ethers.utils.getAddress(addr);
-        addr=addr;
+        addr = ethers.utils.getAddress(addr);
       }
       catch {
         return { statusCode: 400, body: "Invalid address" };
