@@ -3,7 +3,7 @@
 // const signer = new ethers.Wallet(process.env.PRIVATE_KEY);
 
 const sign = async(addr, amount) => {
-  return `${addr} wants to mint ${amount}`
+  return `${addr} wants to mint ${amount} + ${process.env.TEST_NUMBER}`
 	// const message = ethers.utils.solidityKeccak256(
 	// 	["address", "address", "uint256"],
 	// 	[process.env.TEJIVERSE, addr, amount]
@@ -20,7 +20,8 @@ exports.handler = async function(event, context) {
       }
 
       try {
-        addr = ethers.utils.getAddress(addr);
+        // addr = ethers.utils.getAddress(addr);
+        addr=addr;
       }
       catch {
         return { statusCode: 400, body: "Invalid address" };
