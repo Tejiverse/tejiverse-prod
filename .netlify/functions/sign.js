@@ -14,7 +14,7 @@ const sign = async(addr, amount) => {
 
 exports.handler = async function(event, context) {
     try {
-      const { addr, amount } = event.queryStringParameters || {};
+      let { addr, amount } = event.queryStringParameters || {};
       if (!addr || !amount) {
         return { statusCode: 400, body: "Missing query parameters" };
       }
