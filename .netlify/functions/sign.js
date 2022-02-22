@@ -1,21 +1,15 @@
-if (process.env.PRIVATE_KEY) {
-  console.log("found key")
-}
-if (process.env.TEJIVERSE) {
-  console.log("found address")
-}
+// import { ethers } from "https://cdn.ethers.io/lib/ethers-5.2.esm.min.js";
 
-import { ethers } from "https://cdn.ethers.io/lib/ethers-5.2.esm.min.js";
-
-const signer = new ethers.Wallet(process.env.PRIVATE_KEY);
+// const signer = new ethers.Wallet(process.env.PRIVATE_KEY);
 
 const sign = async(addr, amount) => {
-	const message = ethers.utils.solidityKeccak256(
-		["address", "address", "uint256"],
-		[process.env.TEJIVERSE, addr, amount]
-	);
+  return `${addr} wants to mint ${amount}`
+	// const message = ethers.utils.solidityKeccak256(
+	// 	["address", "address", "uint256"],
+	// 	[process.env.TEJIVERSE, addr, amount]
+	// );
 
-	return await signer.signMessage(ethers.utils.arrayify(message));
+	// return await signer.signMessage(ethers.utils.arrayify(message));
 }
 
 exports.handler = async function(event, context) {
