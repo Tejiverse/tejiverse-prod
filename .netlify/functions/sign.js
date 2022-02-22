@@ -11,6 +11,8 @@ const sign = async(addr, amount) => {
 	return await signer.signMessage(ethers.utils.arrayify(message));
 }
 
+import whitelist from "./whitelist.json";
+
 exports.handler = async function(event, context) {
     try {
       let { addr, amount } = event.queryStringParameters || {};
@@ -27,7 +29,10 @@ exports.handler = async function(event, context) {
 
       amount = parseInt(amount);
     
-      if (amount < 1 || amount > 3) {
+      if (!whitelist.includes(addr)) {
+        return { statusCode: 400, body: "Not in whitelist" };
+      }
+      else if (amount < 1 || amount > 3) {
         return { statusCode: 400, body: "Invalid amount" };
       }
 
