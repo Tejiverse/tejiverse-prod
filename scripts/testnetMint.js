@@ -81,14 +81,14 @@ const checkMintingLive = async() => {
     const whitelistLive = await isWhitelistOnly();
     const publicLive = await isPublic();
     if (!whitelistLive && !publicLive) {
-        $("#mint-tools").addClass("hidden");
+        $("#mint-buttons").addClass("hidden");
         $("#mint-closed").removeClass("hidden");
     }
     else {
         if (publicLive && whitelistLive) {
             $("#whitelisted").html('');
         }
-        $("#mint-tools").removeClass("hidden");
+        $("#mint-buttons").removeClass("hidden");
         $("#mint-closed").addClass("hidden");
     }
 }
