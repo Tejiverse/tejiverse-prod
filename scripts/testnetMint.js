@@ -154,10 +154,13 @@ const mint = async() => {
     }
     catch (error) {
         if ((error.message).includes("Tejiverse: invalid signature")) {
-            await displayErrorMessage(`Error: You are not whitelisted!`)
+            await displayErrorMessage(`Error: Invalid signature!`)
         }
         else if ((error.message).includes("Tejiverse: max supply exceeded")) {
             await displayErrorMessage(`Error: Mint would exceed max supply!`)
+        }
+        else if ((error.message).includes("Tejiverse: already claimed")) {
+            await displayErrorMessage(`Error: Already claimed!`)
         }
         else {
             await displayErrorMessage("An error occurred. See console and window alert for details...")
