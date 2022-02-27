@@ -12,7 +12,7 @@ const correctChain = 1;
 const MAX_MINT = 1;
 const MAX_SUPPLY = 1000;
 const openseaLink = "https://opensea.io/collection/tejiverse";
-const looksrareLink = "https://looksrare.org/collections/0x74FDce4a5AbAA0c8C6933e80Ad4fEc50A0270D11/manage";
+const looksrareLink = "https://looksrare.org/collections/0x74FDce4a5AbAA0c8C6933e80Ad4fEc50A0270D11";
 
 /*********************************************************************************/
 /***********************************DEV CONFIG************************************/
@@ -28,7 +28,7 @@ const looksrareLink = "https://looksrare.org/collections/0x74FDce4a5AbAA0c8C6933
 // const MAX_MINT = 1;
 // const MAX_SUPPLY = 1000;
 // const openseaLink = "https://opensea.io/collection/tejiverse";
-// const looksrareLink = "https://looksrare.org/collections/0x74FDce4a5AbAA0c8C6933e80Ad4fEc50A0270D11/manage";
+// const looksrareLink = "https://looksrare.org/collections/0x74FDce4a5AbAA0c8C6933e80Ad4fEc50A0270D11";
 
 /*********************************END CONFIG************************************/
 
