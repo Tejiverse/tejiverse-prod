@@ -11,8 +11,8 @@ const etherscanBase = `https://etherscan.io/tx/`;
 const correctChain = 1;
 const MAX_MINT = 1;
 const MAX_SUPPLY = 1000;
-const openseaLink = "";
-const looksrareLink = "";
+const openseaLink = "https://opensea.io/collection/tejiverse";
+const looksrareLink = "https://looksrare.org/collections/0x74FDce4a5AbAA0c8C6933e80Ad4fEc50A0270D11/manage";
 
 /*********************************************************************************/
 /***********************************DEV CONFIG************************************/
@@ -27,8 +27,8 @@ const looksrareLink = "";
 // const correctChain = 4;
 // const MAX_MINT = 1;
 // const MAX_SUPPLY = 1000;
-// const openseaLink = "";
-// const looksrareLink = "";
+// const openseaLink = "https://opensea.io/collection/tejiverse";
+// const looksrareLink = "https://looksrare.org/collections/0x74FDce4a5AbAA0c8C6933e80Ad4fEc50A0270D11/manage";
 
 /*********************************END CONFIG************************************/
 
@@ -175,7 +175,7 @@ const updateMintInfo = async() => {
     let minted = Number(await tejis.totalSupply());
     $("#num-minted").text(minted);
     if (minted == MAX_SUPPLY) {
-        $("#sold-out").html(`SOLD OUT. <br><br>AVAILABLE ON <a href="${openseaLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:blue;">OPENSEA⬈</a> & <a href="${looksrareLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:green;">LOOKSRARE⬈</a>`);
+        $("#sold-out").html(`SOLD OUT. <br><br>AVAILABLE ON <a href="${openseaLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:#F5CD03">OPENSEA⬈</a> & <a href="${looksrareLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:#F5CD03;">LOOKSRARE⬈</a>`);
         $("#mint-button").remove();
         $("#mint-n-stake-button").remove();
         $("#quantity-controls").remove();
