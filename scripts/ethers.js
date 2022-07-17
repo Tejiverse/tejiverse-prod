@@ -280,7 +280,7 @@ window.onload = async()=>{
     await updateInfo();
     await checkMintingLive();
     await updateMintInfo();
-    await checkWhitelistStatus();
+    // await checkWhitelistStatus();
 };
 
 window.onunload = async()=>{
